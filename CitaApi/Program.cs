@@ -1,3 +1,4 @@
+using CitaApi.Middleware;
 using CitaApi.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +23,7 @@ if (app.Environment.IsDevelopment())
 }
 
 // Configure the HTTP request pipeline.
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 
